@@ -29,14 +29,14 @@ function Testimonial() {
   };
 
   return (
-    <section className="text-gray-600 body-font">
-      <div className="container px-2 py-8 mx-auto">
-        <h1 className="text-3xl font-medium title-font text-gray-900 mb-12 text-center">
+    <section className="body-font text-gray-600 dark:text-gray-300">
+      <div className="container mx-auto px-2 py-8">
+        <h1 className="title-font mb-12 text-center text-3xl font-medium text-gray-900 dark:text-white">
           Testimonials Data Example
         </h1>
         <div className="flex flex-wrap -m-4">
           <div className="p-4 md:w-1/2 w-full">
-            <div className="h-full bg-gray-100 p-8 rounded">
+            <div className="h-full rounded-lg bg-gray-100 p-8 dark:bg-gray-900/60">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -51,44 +51,46 @@ function Testimonial() {
                 with team and support is brilliant. Thank you for awesome
                 service.
               </p>
-              <a className="md:flex items-center justify-between sm:flex-row">
-                <div className="inline-flex items-center">
+              <div className="flex flex-col gap-4 border-t border-gray-200/80 pt-6 dark:border-gray-700/80 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex min-w-0 items-center gap-4">
                   <img
                     alt="testimonial"
                     src="/avatar/1.jpg"
-                    className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
+                    className="h-12 w-12 shrink-0 rounded-full object-cover object-center"
                   />
-                  <span className="flex-grow flex flex-col pl-4">
-                    <span className="title-font font-medium text-gray-900">
-                      Lance Jarvis{" "}
-                    </span>
-                    <span className="text-gray-500 text-xs">
-                      GENERAL MANAGER
-                    </span>
-                  </span>
+                  <div className="min-w-0">
+                    <div className="title-font font-medium text-gray-900 dark:text-white">
+                      Lance Jarvis
+                    </div>
+                    <div className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                      General manager
+                    </div>
+                  </div>
                 </div>
-                <div className="mt-5 md:mt-0">
+                <div className="flex shrink-0 flex-wrap gap-2 sm:justify-end">
                   <button
+                    type="button"
                     onClick={playAudio}
-                    className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                    className="inline-flex rounded-lg border-0 bg-indigo-600 px-5 py-2 text-sm font-semibold text-white hover:bg-indigo-700 focus:outline-none dark:bg-indigo-500 dark:hover:bg-indigo-400"
                   >
-                    PLAY
+                    Play
                   </button>
                   <audio className="audio-element">
-                    <source src="/audio/1.mp3"></source>
+                    <source src="/audio/1.mp3" />
                   </audio>
                   <button
+                    type="button"
                     onClick={pauseAudio}
-                    className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 mx-2 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                    className="inline-flex rounded-lg border border-gray-300 bg-white px-5 py-2 text-sm font-semibold text-gray-800 hover:bg-gray-50 focus:outline-none dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700"
                   >
-                    PAUSE
+                    Pause
                   </button>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
           <div className="p-4 md:w-1/2 w-full">
-            <div className="h-full bg-gray-100 p-8 rounded">
+            <div className="h-full rounded-lg bg-gray-100 p-8 dark:bg-gray-900/60">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -102,40 +104,42 @@ function Testimonial() {
                 create anything you envision and it does it so easy and
                 flawless. I can't imagine not working with the service.
               </p>
-              <a className="md:flex items-center justify-between sm:flex-row">
-                <div className="inline-flex items-center">
+              <div className="flex flex-col gap-4 border-t border-gray-200/80 pt-6 dark:border-gray-700/80 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex min-w-0 items-center gap-4">
                   <img
                     alt="testimonial"
                     src="/avatar/2.jpg"
-                    className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
+                    className="h-12 w-12 shrink-0 rounded-full object-cover object-center"
                   />
-                  <span className="flex-grow flex flex-col pl-4">
-                    <span className="title-font font-medium text-gray-900">
-                      Juliet Wright{" "}
-                    </span>
-                    <span className="text-gray-500 text-xs">
-                      TECHNICAL WRITER{" "}
-                    </span>
-                  </span>
+                  <div className="min-w-0">
+                    <div className="title-font font-medium text-gray-900 dark:text-white">
+                      Juliet Wright
+                    </div>
+                    <div className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                      Technical writer
+                    </div>
+                  </div>
                 </div>
-                <div className="mt-5 md:mt-0">
+                <div className="flex shrink-0 flex-wrap gap-2 sm:justify-end">
                   <button
+                    type="button"
                     onClick={playAudiofemale}
-                    className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                    className="inline-flex rounded-lg border-0 bg-indigo-600 px-5 py-2 text-sm font-semibold text-white hover:bg-indigo-700 focus:outline-none dark:bg-indigo-500 dark:hover:bg-indigo-400"
                   >
-                    PLAY
+                    Play
                   </button>
                   <audio className="audio-element-female">
-                    <source src="/audio/2.mp3"></source>
+                    <source src="/audio/2.mp3" />
                   </audio>
                   <button
+                    type="button"
                     onClick={pauseAudiofemale}
-                    className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 mx-2 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                    className="inline-flex rounded-lg border border-gray-300 bg-white px-5 py-2 text-sm font-semibold text-gray-800 hover:bg-gray-50 focus:outline-none dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700"
                   >
-                    PAUSE
+                    Pause
                   </button>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
         </div>

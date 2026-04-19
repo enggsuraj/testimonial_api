@@ -1,14 +1,9 @@
-const {
-  applyApiCors,
-  setRateLimitHeaders,
-  setDeprecationHeaders,
-} = require("../../lib/apiCommon");
-const { getById } = require("../../lib/testimonials");
+const { applyApiCors, setRateLimitHeaders } = require("../../../lib/apiCommon");
+const { listTestimonials } = require("../../../lib/testimonials");
 
 module.exports = async function handler(req, res) {
   await applyApiCors(req, res);
   setRateLimitHeaders(res);
-  setDeprecationHeaders(res, "/api/v1");
 
   if (req.method === "OPTIONS") {
     return res.status(204).end();
@@ -24,10 +19,13 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: "method_not_allowed" });
   }
 
-  const testimonial = getById(req.query.id);
-  if (!testimonial) {
-    return res.status(404).json({ error: "not_found" });
+  const result = listTestimonials(req.query);
+  if (result.error) {
+    return res.status(400).json({
+      error: result.error,
+      message: "Invalid query parameters.",
+    });
   }
 
-  return res.status(200).json(testimonial);
+  return res.status(200).json({ data: result.data, meta: result.meta });
 };

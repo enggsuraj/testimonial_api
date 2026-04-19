@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Script from "next/script";
 
 import About from "../components/About";
 import Coffee from "../components/Coffee";
@@ -39,7 +40,10 @@ export default function Home() {
         <meta charSet="utf-8" />
         <meta name="language" content="English" />
         <meta name="author" content="blogtheorem" />
-        <link rel="canonical" href="testimonialapi.toolcarton.com" />
+        <link
+          rel="canonical"
+          href="https://testimonialapi.toolcarton.com/"
+        />
         <link
           rel="icon"
           type="image/png"
@@ -85,22 +89,20 @@ export default function Home() {
           content="https://testimonialapi.toolcarton.com/img/banner.png"
         />
 
-        {/* GOOGLE ANALYTICS */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-WXFE0XNSZQ"
-        ></script>
-
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-            
-              gtag('config', 'G-WXFE0XNSZQ');`,
-          }}
-        />
       </Head>
+
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-WXFE0XNSZQ"
+        strategy="afterInteractive"
+      />
+      <Script id="ga-gtag" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-WXFE0XNSZQ');
+        `}
+      </Script>
 
       {/*  MAIN CODE PAGE */}
 

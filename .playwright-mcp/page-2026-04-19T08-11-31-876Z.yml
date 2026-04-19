@@ -1,0 +1,279 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - banner [ref=e5]:
+      - generic [ref=e6]:
+        - link "testimonial API" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e8]: testimonial API
+        - navigation "Site" [ref=e9]:
+          - link "Changelog" [ref=e10] [cursor=pointer]:
+            - /url: /changelog
+          - link "Status" [ref=e11] [cursor=pointer]:
+            - /url: /status
+          - link "OpenAPI" [ref=e12] [cursor=pointer]:
+            - /url: /api/openapi
+          - button "Switch to dark mode" [ref=e13]:
+            - generic [ref=e14]: 🌙
+            - generic [ref=e15]: Dark
+    - generic [ref=e16]:
+      - generic [ref=e18]:
+        - generic [ref=e19]:
+          - heading "Get list of random user Testimonial data." [level=1] [ref=e20]:
+            - text: Get list of random user
+            - generic [ref=e21]: Testimonial data.
+          - paragraph [ref=e22]: Tired of copy and pasting lorem user's testimonial text which doesn't give the feel of authenticity, don't worry try testimonial API to get dummy testimonial data that includes user id, name, location, designation, avatar, message and rating .
+          - link "Get all testimonial JSON data" [ref=e24] [cursor=pointer]:
+            - /url: /api/v1
+            - button "Get all testimonial JSON data" [ref=e25]
+        - img "dev" [ref=e27]
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - heading "Free Testimonials API Data for testing and prototyping." [level=1] [ref=e31]
+          - paragraph [ref=e32]: Contain upto 10 users data, simple use a GET HTTP request on the link. Individual of one data can be fetch using respective ID.
+        - generic [ref=e33]:
+          - generic [ref=e36]:
+            - img "setting_icon" [ref=e38]
+            - heading "REST API" [level=1] [ref=e39]
+            - paragraph [ref=e40]: Restful online API, publicly accessible via https get method.
+          - generic [ref=e43]:
+            - img "setting_icon" [ref=e45]
+            - heading "JSON DATA" [level=1] [ref=e46]
+            - paragraph [ref=e47]: Contain neccessary data required to build testimonials.
+          - generic [ref=e50]:
+            - img "setting_icon" [ref=e52]
+            - heading "24/7 uptime" [level=1] [ref=e53]
+            - paragraph [ref=e54]: Fast response time in your testing & developement phases.
+      - generic [ref=e56]:
+        - heading "Introduction" [level=2] [ref=e57]
+        - paragraph [ref=e58]: Use GET to fetch JSON. The current API lives under /api/v1 and supports query parameters for pagination and filtering (see the API reference below).
+        - link "GET https://testimonialapi.toolcarton.com/api/v1" [ref=e59] [cursor=pointer]:
+          - /url: /api/v1
+          - button "GET https://testimonialapi.toolcarton.com/api/v1" [ref=e60]
+      - generic [ref=e62]:
+        - heading "Response" [level=2] [ref=e63]
+        - img "response" [ref=e64]
+      - generic [ref=e66]:
+        - heading "Get single user" [level=2] [ref=e67]
+        - paragraph [ref=e68]: IDs from 1 to 10 return one enriched testimonial. Odd IDs are male-presenting samples and even IDs are female-presenting (demo convention only).
+        - link "single user" [ref=e69] [cursor=pointer]:
+          - /url: /api/v1/1
+          - button "GET https://testimonialapi.toolcarton.com/api/v1/1" [ref=e70]
+        - img "single user testimonial" [ref=e71]
+      - generic [ref=e73]:
+        - heading "Different Language JSON fetch Code Example" [level=1] [ref=e75]
+        - generic [ref=e76]:
+          - generic [ref=e78]:
+            - heading "Javascript" [level=2] [ref=e79]
+            - img "code-1 image" [ref=e80]
+          - generic [ref=e82]:
+            - heading "Nodejs Request" [level=2] [ref=e83]
+            - img "code-2 image" [ref=e84]
+          - generic [ref=e86]:
+            - heading "JQuery" [level=2] [ref=e87]
+            - img "code-3 image" [ref=e88]
+          - generic [ref=e90]:
+            - heading "Java OkHttp" [level=2] [ref=e91]
+            - img "code-4 image" [ref=e92]
+      - generic [ref=e94]:
+        - generic [ref=e95]:
+          - heading "API reference" [level=2] [ref=e96]
+          - paragraph [ref=e97]:
+            - text: Versioned endpoints under
+            - code [ref=e98]: /api/v1
+            - text: support pagination, filtering, search, and deterministic random ordering. Legacy
+            - code [ref=e99]: /api
+            - text: routes remain but send
+            - code [ref=e100]: Deprecation
+            - text: headers.
+        - generic [ref=e101]:
+          - paragraph [ref=e102]: CORS & limits
+          - paragraph [ref=e103]:
+            - code [ref=e104]: GET
+            - text: ","
+            - code [ref=e105]: HEAD
+            - text: ", and"
+            - code [ref=e106]: OPTIONS
+            - text: are allowed from any origin (
+            - code [ref=e107]: "*"
+            - text: ). Responses include illustrative
+            - code [ref=e108]: X-RateLimit-*
+            - text: headers for client testing.
+        - generic [ref=e109]:
+          - heading "OpenAPI" [level=3] [ref=e110]
+          - generic [ref=e111]:
+            - paragraph [ref=e112]: "Machine-readable schema (JSON):"
+            - generic [ref=e113]:
+              - link "GET /api/openapi" [ref=e114] [cursor=pointer]:
+                - /url: /api/openapi
+              - button "Copy URL" [ref=e115]
+        - generic [ref=e116]:
+          - heading "v1 · recommended" [level=3] [ref=e117]
+          - generic [ref=e118]:
+            - generic [ref=e121]:
+              - generic [ref=e122]:
+                - generic [ref=e123]: GET
+                - code [ref=e124]: https://testimonialapi.toolcarton.com/api/v1
+              - paragraph [ref=e125]: Paginated list · supports query params
+              - generic [ref=e126]:
+                - link "Open" [ref=e127] [cursor=pointer]:
+                  - /url: /api/v1
+                - button "Copy URL" [ref=e128]
+                - button "Copy curl" [ref=e129]
+            - generic [ref=e132]:
+              - generic [ref=e133]:
+                - generic [ref=e134]: GET
+                - code [ref=e135]: https://testimonialapi.toolcarton.com/api/v1?limit=3&offset=0&minRating=4.5&q=design&sort=desc
+              - paragraph [ref=e136]: "Example: limit, offset, minRating, search, sort"
+              - generic [ref=e137]:
+                - link "Open" [ref=e138] [cursor=pointer]:
+                  - /url: /api/v1?limit=3&offset=0&minRating=4.5&q=design&sort=desc
+                - button "Copy URL" [ref=e139]
+                - button "Copy curl" [ref=e140]
+            - generic [ref=e143]:
+              - generic [ref=e144]:
+                - generic [ref=e145]: GET
+                - code [ref=e146]: https://testimonialapi.toolcarton.com/api/v1?sort=random&seed=42
+              - paragraph [ref=e147]: Deterministic random order (seeded)
+              - generic [ref=e148]:
+                - link "Open" [ref=e149] [cursor=pointer]:
+                  - /url: /api/v1?sort=random&seed=42
+                - button "Copy URL" [ref=e150]
+                - button "Copy curl" [ref=e151]
+            - generic [ref=e154]:
+              - generic [ref=e155]:
+                - generic [ref=e156]: GET
+                - code [ref=e157]: https://testimonialapi.toolcarton.com/api/v1/random
+              - paragraph [ref=e158]: One random testimonial
+              - generic [ref=e159]:
+                - link "Open" [ref=e160] [cursor=pointer]:
+                  - /url: /api/v1/random
+                - button "Copy URL" [ref=e161]
+                - button "Copy curl" [ref=e162]
+            - generic [ref=e165]:
+              - generic [ref=e166]:
+                - generic [ref=e167]: GET
+                - code [ref=e168]: https://testimonialapi.toolcarton.com/api/v1/1
+              - paragraph [ref=e169]: Single testimonial · id 1 (supported range 1–10)
+              - generic [ref=e170]:
+                - link "Open" [ref=e171] [cursor=pointer]:
+                  - /url: /api/v1/1
+                - button "Copy URL" [ref=e172]
+                - button "Copy curl" [ref=e173]
+            - generic [ref=e176]:
+              - generic [ref=e177]:
+                - generic [ref=e178]: GET
+                - code [ref=e179]: https://testimonialapi.toolcarton.com/api/v1/5
+              - paragraph [ref=e180]: Single testimonial · id 5 (supported range 1–10)
+              - generic [ref=e181]:
+                - link "Open" [ref=e182] [cursor=pointer]:
+                  - /url: /api/v1/5
+                - button "Copy URL" [ref=e183]
+                - button "Copy curl" [ref=e184]
+            - generic [ref=e187]:
+              - generic [ref=e188]:
+                - generic [ref=e189]: GET
+                - code [ref=e190]: https://testimonialapi.toolcarton.com/api/v1/10
+              - paragraph [ref=e191]: Single testimonial · id 10 (supported range 1–10)
+              - generic [ref=e192]:
+                - link "Open" [ref=e193] [cursor=pointer]:
+                  - /url: /api/v1/10
+                - button "Copy URL" [ref=e194]
+                - button "Copy curl" [ref=e195]
+        - generic [ref=e196]:
+          - heading "Legacy (deprecated)" [level=3] [ref=e197]
+          - generic [ref=e198]:
+            - generic [ref=e201]:
+              - generic [ref=e202]:
+                - generic [ref=e203]: GET
+                - code [ref=e204]: https://testimonialapi.toolcarton.com/api
+              - paragraph [ref=e205]: Legacy · all testimonials (deprecated)
+              - generic [ref=e206]:
+                - link "Open" [ref=e207] [cursor=pointer]:
+                  - /url: /api
+                - button "Copy URL" [ref=e208]
+                - button "Copy curl" [ref=e209]
+            - generic [ref=e212]:
+              - generic [ref=e213]:
+                - generic [ref=e214]: GET
+                - code [ref=e215]: https://testimonialapi.toolcarton.com/api/1
+              - paragraph [ref=e216]: Legacy · single by id (deprecated)
+              - generic [ref=e217]:
+                - link "Open" [ref=e218] [cursor=pointer]:
+                  - /url: /api/1
+                - button "Copy URL" [ref=e219]
+                - button "Copy curl" [ref=e220]
+        - generic [ref=e221]:
+          - generic [ref=e222]:
+            - heading "Example · curl" [level=3] [ref=e223]
+            - generic [ref=e224]: curl -s "https://testimonialapi.toolcarton.com/api/v1?limit=2&offset=0&sort=asc"
+            - button "Copy" [ref=e226]
+          - generic [ref=e227]:
+            - heading "Example · fetch" [level=3] [ref=e228]
+            - generic [ref=e229]: const res = await fetch("https://testimonialapi.toolcarton.com/api/v1?limit=5&sort=asc"); const json = await res.json(); console.log(json.data, json.meta);
+            - button "Copy" [ref=e231]
+      - generic [ref=e233]:
+        - heading "Testimonials Data Example" [level=1] [ref=e234]
+        - generic [ref=e235]:
+          - generic [ref=e237]:
+            - img [ref=e238]
+            - paragraph [ref=e240]: We have been using product for last one year, and I have to say that it has transformed the way we do business. Communication with team and support is brilliant. Thank you for awesome service.
+            - generic [ref=e241]:
+              - generic [ref=e242]:
+                - img "testimonial" [ref=e243]
+                - generic [ref=e244]:
+                  - generic [ref=e245]: Lance Jarvis
+                  - generic [ref=e246]: GENERAL MANAGER
+              - generic [ref=e247]:
+                - button "PLAY" [ref=e248]
+                - button "PAUSE" [ref=e249]
+          - generic [ref=e251]:
+            - img [ref=e252]
+            - paragraph [ref=e254]: It has changed the way I used the website. Product lets you create anything you envision and it does it so easy and flawless. I can't imagine not working with the service.
+            - generic [ref=e255]:
+              - generic [ref=e256]:
+                - img "testimonial" [ref=e257]
+                - generic [ref=e258]:
+                  - generic [ref=e259]: Juliet Wright
+                  - generic [ref=e260]: TECHNICAL WRITER
+              - generic [ref=e261]:
+                - button "PLAY" [ref=e262]
+                - button "PAUSE" [ref=e263]
+      - generic [ref=e266]:
+        - paragraph [ref=e267]: If you feel the service help you achieve your work, do support with small donation by buy a cup of coffee, this help to make even better software service and deliever to you. Thank you for your time and using the page.
+        - link "buymeacoffee" [ref=e268] [cursor=pointer]:
+          - /url: https://www.buymeacoffee.com/blogtheorem
+          - img "coffee" [ref=e269]
+    - generic [ref=e271]:
+      - text: Made with ☕ and 💻 by
+      - link "blogtheorem" [ref=e272] [cursor=pointer]:
+        - /url: https://blogtheorem.com
+    - contentinfo [ref=e273]:
+      - generic [ref=e275]:
+        - paragraph [ref=e276]:
+          - text: © 2021 testimonialapi —
+          - link "info.blogtheorem@gmail.com" [ref=e277] [cursor=pointer]:
+            - /url: mailto:info.blogtheorem@gmail.com
+        - generic [ref=e278]: ·
+        - navigation [ref=e279]:
+          - link "Changelog" [ref=e280] [cursor=pointer]:
+            - /url: /changelog
+          - link "Status" [ref=e281] [cursor=pointer]:
+            - /url: /status
+          - link "OpenAPI" [ref=e282] [cursor=pointer]:
+            - /url: /api/openapi
+        - generic [ref=e283]:
+          - link "twitter" [ref=e284] [cursor=pointer]:
+            - /url: https://twitter.com/blogtheorem
+            - img [ref=e285]
+          - link "instagram" [ref=e287] [cursor=pointer]:
+            - /url: https://instagram.com/blogtheorem
+            - img [ref=e288]
+          - link "producthunt" [ref=e291] [cursor=pointer]:
+            - /url: https://www.producthunt.com/posts/testimonialapi?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-testimonialapi
+            - img "testimonialapi - Customer Testimonial JSON data in one fetch | Product Hunt" [ref=e292]
+          - link "producthunt" [ref=e293] [cursor=pointer]:
+            - /url: https://rapidapi.com/info.blogtheorem/api/testimonial/
+            - img "Rapid API testimonialapi - Customer Testimonial JSON data in one fetch | Product Hunt" [ref=e294]
+  - button "Open Next.js Dev Tools" [ref=e300] [cursor=pointer]:
+    - img [ref=e301]
+  - alert [ref=e304]

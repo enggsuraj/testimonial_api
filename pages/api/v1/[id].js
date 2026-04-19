@@ -1,14 +1,9 @@
-const {
-  applyApiCors,
-  setRateLimitHeaders,
-  setDeprecationHeaders,
-} = require("../../lib/apiCommon");
-const { getById } = require("../../lib/testimonials");
+const { applyApiCors, setRateLimitHeaders } = require("../../../lib/apiCommon");
+const { getById } = require("../../../lib/testimonials");
 
 module.exports = async function handler(req, res) {
   await applyApiCors(req, res);
   setRateLimitHeaders(res);
-  setDeprecationHeaders(res, "/api/v1");
 
   if (req.method === "OPTIONS") {
     return res.status(204).end();

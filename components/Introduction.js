@@ -2,21 +2,20 @@ import React from "react";
 
 function Introduction() {
   return (
-    <section className="text-gray-600 body-font py-2">
-      <div className="container flex flex-wrap  mx-auto items-center">
-        <h2 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+    <section className="body-font py-2 text-gray-600 dark:text-gray-300">
+      <div className="container mx-auto flex flex-wrap items-center">
+        <h2 className="title-font mb-4 text-2xl font-medium text-gray-900 dark:text-white sm:text-3xl">
           Introduction
         </h2>
         <p className="text-lg">
-          GET method is used to appends form data to the URL in name or value
-          pair. If you use GET, the length of URL will remain limited. It helps
-          users to submit the bookmark the result. GET is better for the data
-          which does not require any security or having images or word
-          documents. Get 10 results.
+          Use <span className="font-mono text-sm">GET</span> to fetch JSON. The
+          current API lives under{" "}
+          <span className="font-mono text-sm">/api/v1</span> and supports query
+          parameters for pagination and filtering (see the API reference below).
         </p>
-        <a href="/api" className="pt-4 ">
-          <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-            GET https://testimonial.toolcarton/api{" "}
+        <a href="/api/v1" className="pt-4 ">
+          <button className="inline-flex rounded-lg border-0 bg-indigo-600 py-2 px-6 text-lg text-white hover:bg-indigo-700 focus:outline-none dark:bg-indigo-500 dark:hover:bg-indigo-400">
+            GET https://testimonialapi.toolcarton.com/api/v1
           </button>
         </a>
       </div>
