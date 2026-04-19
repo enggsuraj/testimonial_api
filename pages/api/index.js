@@ -1,16 +1,17 @@
-import nc from "next-connect";
-import data from "../../data/data.";
 import NextCors from "nextjs-cors";
+import data from "../../data/data.";
 
-// GET DATA
-const handler = nc().get((req, res) => {
-  NextCors(req, res, {
+export default async function handler(req, res) {
+  await NextCors(req, res, {
     methods: ["GET"],
     origin: "*",
     optionsSuccessStatus: 200,
   });
 
-  res.json(data);
-});
+  if (req.method !== "GET") {
+    res.setHeader("Allow", ["GET"]);
+    return res.status(405).end();
+  }
 
-export default handler;
+  return res.json(data);
+}

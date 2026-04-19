@@ -1,5 +1,6 @@
+import { render } from "@testing-library/react";
 import React from "react";
-import ReactDOM from "react-dom";
+
 import About from "../components/About";
 import Coffee from "../components/Coffee";
 import DifferentJSON from "../components/DifferentJSON";
@@ -12,62 +13,46 @@ import Service from "../components/Service";
 import SingleUser from "../components/SingleUser";
 import Testimonial from "../components/Testimonial";
 
-// ABOUT COMPONENT TESTING
-it("Case 1", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<About />, div);
+it("renders About", () => {
+  render(<About />);
 });
 
-// COFFEE COMPONENT TESTING
-it("Case 2", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<Coffee />, div);
+it("renders Coffee", () => {
+  render(<Coffee />);
 });
 
-// DifferentJSON COMPONENT TESTING
-it("Case 3", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<DifferentJSON />, div);
+it("renders DifferentJSON", () => {
+  render(<DifferentJSON />);
 });
 
-// EntireJSON COMPONENT TESTING
-it("Case 4", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<EntireJSON />, div);
+it("renders EntireJSON", () => {
+  render(<EntireJSON />);
 });
 
-// Footer COMPONENT TESTING
-it("Case 5", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<Footer />, div);
+it("renders Footer", () => {
+  render(<Footer />);
 });
 
-// Header COMPONENT TESTING
-it("Case 6", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<Header />, div);
+it("renders Header", () => {
+  render(<Header />);
 });
 
-// Message COMPONENT TESTING
-it("Case 7", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<Message />, div);
+it("renders Message", () => {
+  render(<Message />);
 });
 
-// Response COMPONENT TESTING
-it("Case 8", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<Response />, div);
+it("renders Response", () => {
+  render(<Response />);
 });
 
-// SingleUser COMPONENT TESTING
-it("Case 9", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<SingleUser />, div);
+it("renders Service", () => {
+  render(<Service />);
 });
 
-// Testimonial COMPONENT TESTING
-it("Case 10", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<Testimonial />, div);
+it("renders SingleUser", () => {
+  render(<SingleUser />);
+});
+
+it("renders Testimonial", () => {
+  render(<Testimonial />);
 });

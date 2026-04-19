@@ -1,256 +1,77 @@
 import React from "react";
 import Link from "next/link";
 
+const PUBLIC_BASE = "https://testimonialapi.toolcarton.com";
+
+const endpoints = [
+  { href: "/api", path: "/api", caption: "All 10 testimonials" },
+  ...Array.from({ length: 10 }, (_, i) => {
+    const n = i + 1;
+    return {
+      href: `/api/${n}`,
+      path: `/api/${n}`,
+      caption: `Single user · ID ${n}`,
+    };
+  }),
+];
+
 function EntireJSON() {
   return (
-    <section className="text-gray-600 body-font">
-      <div className="container py-4 mx-auto">
-        <div className="text-center mb-6">
-          <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">
-            Entire JSON API{" "}
-          </h1>
+    <section className="body-font text-gray-600">
+      <div className="container mx-auto py-8">
+        <div className="mb-8 text-center md:mb-10">
+          <h2 className="title-font text-2xl font-semibold text-gray-900 sm:text-3xl">
+            Entire JSON API
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-base leading-relaxed text-gray-500">
+            Click a row to open the response in your browser. Use these URLs in
+            your app — they match production when deployed.
+          </p>
         </div>
-        <div className="flex flex-wrap sm:mx-auto sm:mb-2 -mx-2 cursor-pointer">
-          <Link href="/api">
-            <div className="p-2 sm:w-1/2 w-full">
-              <div className="bg-gray-100 rounded flex p-4 h-full items-center hover:bg-blue-50">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="3"
-                  className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                  <path d="M22 4L12 14.01l-3-3"></path>
-                </svg>
-                <span className="title-font font-medium text-sm	md:text-lg">
-                  GET https://testimonial.toolcarton/api{" "}
-                </span>
-              </div>
-            </div>
-          </Link>
-          <Link href="/api/1">
-            <div className="p-2 sm:w-1/2 w-full">
-              <div className="bg-gray-100 rounded flex p-4 h-full items-center hover:bg-blue-50">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="3"
-                  className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                  <path d="M22 4L12 14.01l-3-3"></path>
-                </svg>
-                <span className="title-font font-medium text-sm	md:text-lg">
-                  GET https://testimonial.toolcarton/api/1{" "}
-                </span>
-              </div>
-            </div>
-          </Link>
-          <Link href="/api/2">
-            <div className="p-2 sm:w-1/2 w-full">
-              <div className="bg-gray-100 rounded flex p-4 h-full items-center hover:bg-blue-50">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="3"
-                  className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                  <path d="M22 4L12 14.01l-3-3"></path>
-                </svg>
-                <span className="title-font font-medium text-sm	md:text-lg">
-                  GET https://testimonial.toolcarton/api/2{" "}
-                </span>
-              </div>
-            </div>
-          </Link>
 
-          <Link href="/api/3">
-            <div className="p-2 sm:w-1/2 w-full">
-              <div className="bg-gray-100 rounded flex p-4 h-full items-center hover:bg-blue-50">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="3"
-                  className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4"
-                  viewBox="0 0 24 24"
+        <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2">
+          {endpoints.map(({ href, path, caption }) => {
+            const fullUrl = `${PUBLIC_BASE}${path}`;
+            return (
+              <Link
+                key={href}
+                href={href}
+                className="group flex min-h-18 items-stretch rounded-xl border border-gray-200/90 bg-white p-4 shadow-sm ring-1 ring-black/5 transition duration-200 hover:border-indigo-200 hover:bg-indigo-50/40 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+              >
+                <div className="flex min-w-0 flex-1 flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
+                  <span className="inline-flex w-fit shrink-0 items-center rounded-md bg-emerald-100 px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-emerald-800">
+                    GET
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <code className="block break-all text-left font-mono text-sm leading-snug text-gray-800 group-hover:text-indigo-900">
+                      {fullUrl}
+                    </code>
+                    <span className="mt-1 block text-xs text-gray-500">
+                      {caption}
+                    </span>
+                  </div>
+                </div>
+                <span
+                  className="ml-3 hidden shrink-0 self-center text-gray-400 transition group-hover:translate-x-0.5 group-hover:text-indigo-500 sm:inline"
+                  aria-hidden
                 >
-                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                  <path d="M22 4L12 14.01l-3-3"></path>
-                </svg>
-                <span className="title-font font-medium text-sm	md:text-lg">
-                  GET https://testimonial.toolcarton/api/3{" "}
+                  <svg
+                    className="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
                 </span>
-              </div>
-            </div>
-          </Link>
-
-          <Link href="/api/4">
-            <div className="p-2 sm:w-1/2 w-full">
-              <div className="bg-gray-100 rounded flex p-4 h-full items-center hover:bg-blue-50">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="3"
-                  className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                  <path d="M22 4L12 14.01l-3-3"></path>
-                </svg>
-                <span className="title-font font-medium text-sm	md:text-lg">
-                  {" "}
-                  GET https://testimonial.toolcarton/api/4{" "}
-                </span>
-              </div>
-            </div>
-          </Link>
-
-          <Link href="/api/5">
-            <div className="p-2 sm:w-1/2 w-full">
-              <div className="bg-gray-100 rounded flex p-4 h-full items-center hover:bg-blue-50">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="3"
-                  className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                  <path d="M22 4L12 14.01l-3-3"></path>
-                </svg>
-                <span className="title-font font-medium text-sm	md:text-lg">
-                  GET https://testimonial.toolcarton/api/5{" "}
-                </span>
-              </div>
-            </div>
-          </Link>
-
-          <Link href="/api/6">
-            <div className="p-2 sm:w-1/2 w-full">
-              <div className="bg-gray-100 rounded flex p-4 h-full items-center hover:bg-blue-50">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="3"
-                  className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                  <path d="M22 4L12 14.01l-3-3"></path>
-                </svg>
-                <span className="title-font font-medium text-sm	md:text-lg">
-                  GET https://testimonial.toolcarton/api/6{" "}
-                </span>
-              </div>
-            </div>
-          </Link>
-
-          <Link href="/api/7">
-            <div className="p-2 sm:w-1/2 w-full">
-              <div className="bg-gray-100 rounded flex p-4 h-full items-center hover:bg-blue-50">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="3"
-                  className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                  <path d="M22 4L12 14.01l-3-3"></path>
-                </svg>
-                <span className="title-font font-medium text-sm	md:text-lg">
-                  GET https://testimonial.toolcarton/api/7{" "}
-                </span>
-              </div>
-            </div>
-          </Link>
-
-          <Link href="/api/8">
-            <div className="p-2 sm:w-1/2 w-full">
-              <div className="bg-gray-100 rounded flex p-4 h-full items-center hover:bg-blue-50">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="3"
-                  className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                  <path d="M22 4L12 14.01l-3-3"></path>
-                </svg>
-                <span className="title-font font-medium text-sm	md:text-lg">
-                  GET https://testimonial.toolcarton/api/8{" "}
-                </span>
-              </div>
-            </div>
-          </Link>
-
-          <Link href="/api/9">
-            <div className="p-2 sm:w-1/2 w-full">
-              <div className="bg-gray-100 rounded flex p-4 h-full items-center hover:bg-blue-50">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="3"
-                  className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                  <path d="M22 4L12 14.01l-3-3"></path>
-                </svg>
-                <span className="title-font font-medium text-sm	md:text-lg">
-                  GET https://testimonial.toolcarton/api/9{" "}
-                </span>
-              </div>
-            </div>
-          </Link>
-
-          <Link href="/api/10">
-            <div className="p-2 sm:w-1/2 w-full">
-              <div className="bg-gray-100 rounded flex p-4 h-full items-center hover:bg-blue-50">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="3"
-                  className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                  <path d="M22 4L12 14.01l-3-3"></path>
-                </svg>
-                <span className="title-font font-medium text-sm	md:text-lg">
-                  GET https://testimonial.toolcarton/api/10{" "}
-                </span>
-              </div>
-            </div>
-          </Link>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>

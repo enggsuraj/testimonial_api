@@ -36,7 +36,7 @@ export default function Home() {
           content="customer testimonials, user testimonials, testimonial API"
         />
         <meta name="robots" content="index, follow" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charSet="utf-8" />
         <meta name="language" content="English" />
         <meta name="author" content="blogtheorem" />
         <link rel="canonical" href="testimonialapi.toolcarton.com" />
